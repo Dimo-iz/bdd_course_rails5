@@ -66,12 +66,12 @@
   </header>
   <div class="col-md-10">
     <% if @article.comments.any? %>
-      <%= persisted_comments(@comments).each do |comment| %>
+      <% persisted_comments(@comments).each do |comment| %>
         <div class="comment-body">
           <%= comment.body %>
         </div>
         <div class="comment-time">
-          <%= time_agoin_words(comment.created_at) %>
+          <%= time_ago_in_words(comment.created_at) %>
           ago by <%= comment.user.email %>
         </div>
         <hr>
